@@ -1,31 +1,24 @@
-# Welcome to your new OSS project
+Sourcehawk FaaS
+---------------
 
-This project currently has the base documentation files required.  Replace this
-file with your own README.md.
+[![Maven Central](https://img.shields.io/maven-central/v/com.optum.sourcehawk.faas/sourcehawk-faas.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.optum.sourcehawk.faas%22%20AND%20a:%22sourcehawk-faas%22) 
+[![Build Status](https://github.com/optum/sourcehawk-faas/workflows/Maven%20CI/badge.svg)](https://github.com/optum/sourcehawk-faas/actions)
 
-## Files included
+### Docker Images
 
-**CODE_OF_CONDUCT.md**
 
-Use without changes
 
-**INDIVIDUAL_CONTRIBUTOR_LICENSE.md**
+Sourcehawk Function as a Service offerings.
 
-Use without changes
+## Current Implementations
 
-**CONTRIBUTING.md**
+1. [OpenFaaS](openfaas/README.md)
 
-This file has some portions that are required and others that can be customized.
-Customize the Coding Standards section to mention the languages used by your project.
-Feel free to add any rules and requirements that you would like people to follow
-when contributing to your project.
+Future implementations may include `Microsoft Azure` or `AWS Lambda`
 
-**NOTICE.txt**
+## Development
 
-This file is needed if your project is licensed under the Apache 2.0 license.  
-If you are using this license, fill it out according to the prompts.  Otherwise,
-delete this file.
-
-## Additional Repo Updates
-
-Make sure that you have a project description and appropriate repository topics.
+### Building
+```sh
+./mvnw clean install
+```

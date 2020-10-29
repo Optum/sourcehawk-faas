@@ -1,9 +1,11 @@
-<Insert Project Name Here>
+sourcehawk
+
 Copyright 2020 Optum
 
 Project Description:
 ====================
-<Short description of your project>
+Sourcehawk is a suite of tools which enables development teams to automate compliance scans with configuration and code.
 
-Author(s):
-<List the names and GitHub IDs of the original project authors>
+Contributors:
+@brianwyka - Project Lead
+@ctoestriech - Project Lead
