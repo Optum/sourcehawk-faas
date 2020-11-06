@@ -2,7 +2,8 @@ Sourcehawk FaaS
 ---------------
  
 [![Build Status](https://github.com/optum/sourcehawk-faas/workflows/Maven%20CI/badge.svg)](https://github.com/optum/sourcehawk-faas/actions) 
-[![Sourcehawk Scan](https://github.com/optum/sourcehawk-faas/workflows/Sourcehawk%20Scan/badge.svg)](https://github.com/optum/sourcehawk-faas/actions)
+[![Sourcehawk Scan](https://github.com/optum/sourcehawk-faas/workflows/Sourcehawk%20Scan/badge.svg)](https://github.com/optum/sourcehawk-faas/actions) 
+![OSS Lifecycle](https://img.shields.io/osslifecycle/optum/sourcehawk-faas) 
 
 ### Docker Images
 
