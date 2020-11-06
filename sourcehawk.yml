@@ -1,4 +1,5 @@
 api-version: 0.1
 
 config-locations:
-  - https://raw.githubusercontent.com/optum/sourcehawk-parent/main/.sourcehawk/config.yml
+  - https://raw.githubusercontent.com/optum/sourcehawk-parent/main/.sourcehawk/maven-wrapper.yml
+  - https://raw.githubusercontent.com/optum/sourcehawk-parent/main/.sourcehawk/optum-oss.yml
