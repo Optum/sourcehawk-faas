@@ -61,7 +61,6 @@
     <properties>
         <sourcehawk.version>0.1.5</sourcehawk.version>
         <maven.deploy.skip>true</maven.deploy.skip>
-        <gpg.skip>true</gpg.skip>
     </properties>
 
     <dependencyManagement>

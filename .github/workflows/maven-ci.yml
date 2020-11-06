@@ -52,12 +52,5 @@ jobs:
           BUILD_VERSION=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout | tail -1 | tr -d '\r\n')
           [[ "$BUILD_VERSION" != *"-SNAPSHOT" ]] && BUILD_VERSION="${BUILD_VERSION}-SNAPSHOT" && ./mvnw --batch-mode versions:set -DnewVersion=$BUILD_VERSION || true
       - name: Build Maven Project
-        if: success() && (github.event_name == 'pull_request')
+        if: success()
         run: ./mvnw --batch-mode install -D ci.build
-      - name: Build Maven Project and Deploy Snapshot
-        if: success() && (github.event_name == 'push')
-        run: ./mvnw --batch-mode deploy -D ci.deploy -D ci.snapshot
-        env:
-          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-          SONATYPE_GPG_PASSPHRASE: ${{ secrets.SONATYPE_GPG_PASSPHRASE }}

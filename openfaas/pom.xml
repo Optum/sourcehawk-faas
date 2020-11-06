@@ -85,34 +85,36 @@
 
     <profiles>
         <profile>
-            <id>ci.release</id>
+            <id>ci.push</id>
             <activation>
                 <property>
-                    <name>ci.release</name>
+                    <name>ci.push</name>
                 </property>
             </activation>
             <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>deploy-docker-image</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>../scripts/deploy-docker-image.sh</executable>
-                                    <arguments>
-                                        <argument>${docker.repository}:${project.version}</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>exec-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>deploy-docker-image</id>
+                                    <phase>deploy</phase>
+                                    <goals>
+                                        <goal>exec</goal>
+                                    </goals>
+                                    <configuration>
+                                        <executable>../scripts/deploy-docker-image.sh</executable>
+                                        <arguments>
+                                            <argument>${docker.repository}:${project.version}</argument>
+                                        </arguments>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
             </build>
         </profile>
     </profiles>
