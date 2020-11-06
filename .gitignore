@@ -32,3 +32,5 @@ docker-compose-dev.yml
 dependency-reduced-pom.xml
 
 gh-pages
+template
+build

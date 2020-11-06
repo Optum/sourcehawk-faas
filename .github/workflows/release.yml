@@ -44,19 +44,13 @@ jobs:
           echo ::set-output name=RELEASE_VERSION::$RELEASE_VERSION
       - name: Build Maven Project and Deploy Release
         if: success()
-        run: ./mvnw --batch-mode deploy -P ci.deploy,ci.release
+        run: ./mvnw --batch-mode deploy -D ci.deploy -D ci.release
         env:
           DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
           SONATYPE_GPG_PASSPHRASE: ${{ secrets.SONATYPE_GPG_PASSPHRASE }}
-      - name: Aggregate Coverage Reports
-        id: aggregate_coverage_reports
-        if: success()
-        run: |
-          JACOCO_XML_REPORT_PATHS=$(find . -name "jacoco.xml" -printf '%P\n' | tr '\r\n' ',')
-          echo ::set-output name=JACOCO_XML_REPORT_PATHS::$JACOCO_XML_REPORT_PATHS
       - name: Generate Changelog
         if: success()
         uses: heinrichreimer/github-changelog-generator-action@v2.1.1
@@ -88,12 +82,3 @@ jobs:
           body_path: CHANGELOG.md
           draft: ${{ github.event.inputs.draft }}
           prerelease: ${{ github.event.inputs.prerelease }}
-      - name: Publish Github Pages
-        if: success()
-        continue-on-error: true
-        uses: jamesives/github-pages-deploy-action@3.7.1
-        with:
-          COMMIT_MESSAGE: ${{ format('Publishing github pages for release version {0}', steps.set_maven_project_version.outputs.RELEASE_VERSION) }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: gh-pages
