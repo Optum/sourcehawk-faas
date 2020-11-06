@@ -40,6 +40,9 @@ jobs:
       - name: Build Maven Project and Deploy Release
         if: success()
         run: ./mvnw --batch-mode deploy -D ci.push
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
       - name: Generate Changelog
         if: success()
         uses: heinrichreimer/github-changelog-generator-action@v2.1.1

@@ -1,11 +1,13 @@
 Sourcehawk FaaS
 ---------------
-
-[![Maven Central](https://img.shields.io/maven-central/v/com.optum.sourcehawk.faas/sourcehawk-faas.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.optum.sourcehawk.faas%22%20AND%20a:%22sourcehawk-faas%22) 
-[![Build Status](https://github.com/optum/sourcehawk-faas/workflows/Maven%20CI/badge.svg)](https://github.com/optum/sourcehawk-faas/actions)
+ 
+[![Build Status](https://github.com/optum/sourcehawk-faas/workflows/Maven%20CI/badge.svg)](https://github.com/optum/sourcehawk-faas/actions) 
+[![Sourcehawk Scan](https://github.com/optum/sourcehawk-faas/workflows/Sourcehawk%20Scan/badge.svg)](https://github.com/optum/sourcehawk-faas/actions)
 
 ### Docker Images
 
+![Scan Docker Image Version](https://img.shields.io/docker/v/optumopensource/sourcehawk-openfaas-scan) 
+![Validate Config Docker Image Version](https://img.shields.io/docker/v/optumopensource/sourcehawk-openfaas-validate-config) 
 
 
 Sourcehawk Function as a Service offerings.

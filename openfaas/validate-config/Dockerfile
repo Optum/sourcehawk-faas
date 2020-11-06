@@ -1,8 +1,8 @@
 # Stage 0: Watchdog
-FROM openfaas/of-watchdog:0.8.0 as watchdog
+FROM openfaas/of-watchdog:0.8.1 as watchdog
 
 # Stage 1: Build
-FROM golang:1.15.1-alpine3.12 as build
+FROM golang:1.15.3-alpine3.12 as build
 
 # Setup the go working directory and copy source
 ENV CGO_ENABLED=0
@@ -33,7 +33,7 @@ WORKDIR /go/src/app
 RUN go build --ldflags "-s -w" -a -installsuffix cgo -o handler .
 
 # Stage 2: Final Image
-FROM alpine:3.12
+FROM alpine:3.12.1
 
 # Setup non-root app user
 RUN addgroup -S app && adduser -S -g app --uid 1001 app \
