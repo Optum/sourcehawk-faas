@@ -45,12 +45,6 @@ jobs:
       - name: Build Maven Project and Deploy Release
         if: success()
         run: ./mvnw --batch-mode deploy -D ci.deploy -D ci.release
-        env:
-          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-          SONATYPE_GPG_PASSPHRASE: ${{ secrets.SONATYPE_GPG_PASSPHRASE }}
       - name: Generate Changelog
         if: success()
         uses: heinrichreimer/github-changelog-generator-action@v2.1.1

@@ -10,7 +10,7 @@ set -e
 #
 ##################################################################################
 ROOT="$(dirname "$(dirname "$(dirname "$(readlink -fm "$0")")")")"
-TAG="optumopensource/sourcehawk:faas-validate-config-SNAPSHOT"
+TAG="optumopensource/sourcehawk-openfaas-validate-config:SNAPSHOT"
 NATIVE_IMAGE_PATH="$ROOT/validate-config/target/native-image"
 
 # Make sure the native image exists first

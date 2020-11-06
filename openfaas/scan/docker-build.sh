@@ -10,7 +10,7 @@ set -e
 #
 ##################################################################################
 ROOT="$(dirname "$(dirname "$(dirname "$(readlink -fm "$0")")")")"
-TAG="optumopensource/sourcehawk:faas-scan-SNAPSHOT"
+TAG="optumopensource/sourcehawk-openfaas-scan:SNAPSHOT"
 NATIVE_IMAGE_PATH="$ROOT/scan/target/native-image"
 
 # Make sure the native image exists first
